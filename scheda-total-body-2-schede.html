@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#111111">
+<title>La ghisa ti è amica · Coach</title>
+<style>
+/* Palette nero e oro metallizzato */
+:root {
+  --bg: #090a09;
+  --surface: #151615;
+  --ink: #f1efe7;
+  --muted: #a5a49c;
+  --line: #30312d;
+  --dark: #090a09;
+
+  /* Oro attenuato per elementi e progressi */
+  --lime: #c8aa55;
+  --lime-dark: #8f6d25;
+
+  /* Riflessi chiari e ombre per l'effetto metallico */
+  --gold-metal: linear-gradient(
+    135deg,
+    #fff0ae 0%,
+    #d9b64a 22%,
+    #9c7422 46%,
+    #f5df8a 57%,
+    #bd922f 76%,
+    #715318 100%
+  );
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.topbar,
+.panel,
+.day,
+.exercise {
+  background-color: var(--surface);
+  color: var(--ink);
+}
+
+.day {
+  border-color: var(--line);
+}
+
+.day strong,
+.panel-title h2,
+.exercise-info h3 {
+  color: var(--ink);
+}
+
+.day.active {
+  background: #222117;
+  border-color: #76602c;
+}
+
+.day.active strong {
+  color: #e6cf83;
+}
+
+.hero {
+  background: linear-gradient(145deg, #20211e, #090a09 75%);
+  border: 1px solid #38372f;
+}
+
+.hero-label {
+  color: #dcc36f;
+}
+
+/* Un solo accento giallo, piccolo e controllato */
+.hero-label::first-letter {
+  color: #e8d34e;
+}
+
+.workout-summary,
+.exercise-number,
+.pose,
+.visual,
+.tip,
+.coach-tip {
+  background: #20211e;
+  color: var(--ink);
+}
+
+.brand-mark,
+.start-btn,
+.pill.active,
+.timer-controls .primary,
+.progressbar span {
+  background: #e2c66e; /* chiaro */;
+  color: #17140b;
+}
+
+.progressbar {
+  background: #30312d;
+}
+
+.pill,
+.small-btn,
+.timer-controls button {
+  background-color: #20211e;
+  border-color: #393a35;
+  color: var(--ink);
+}
+
+.exercise,
+.panel {
+  border-color: var(--line);
+}
+
+.caption,
+.muted,
+.today,
+.exercise-info p,
+.list-clean,
+.footer {
+  color: var(--muted);
+}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}button{font:inherit;cursor:pointer}button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #9fbe16;outline-offset:2px}.shell{max-width:1120px;margin:auto;min-height:100vh;background:var(--bg)}
+.topbar{height:72px;padding:0 28px;display:flex;align-items:center;justify-content:space-between;background:var(--surface);border-bottom:1px solid var(--line)}.brand{display:flex;gap:11px;align-items:center;font-size:13px;font-weight:850;letter-spacing:.13em}.brand-mark{width:32px;height:32px;border-radius:50%;background: #e2c66e; /* chiaro */;display:grid;place-items:center;font-size:17px}.top-actions{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:13px}.avatar{width:34px;height:34px;border-radius:50%;background:#e9ece9;display:grid;place-items:center;color:#3c433e;font-weight:750}
+main{padding:30px 28px 140px}.greeting{display:flex;align-items:end;justify-content:space-between;margin-bottom:21px}.eyebrow{font-size:11px;letter-spacing:.16em;font-weight:800;color:#707771;text-transform:uppercase}.greeting h1{margin:4px 0 0;font-size:clamp(28px,5vw,42px);line-height:1.05;letter-spacing:-.055em;font-weight:760}.today{font-size:13px;color:var(--muted)}
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin:0 0 24px}.day{background:var(--surface);border:1px solid var(--line);border-radius:15px;padding:10px 4px;text-align:center;color:var(--muted);font-size:11px}.day strong{display:block;font-size:15px;color:var(--ink);margin-top:3px}.day.active{background:var(--dark);border-color:var(--dark);color:#c4cbc5}.day.active strong{color:var(--lime)}.day.done:after{content:"";display:block;width:5px;height:5px;margin:4px auto -9px;background:#9ab823;border-radius:50%}
+.hero{position:relative;overflow:hidden;min-height:242px;padding:27px 30px;background:var(--dark);color:white;border-radius:var(--radius);display:flex;align-items:center;justify-content:space-between;gap:24px;box-shadow:var(--shadow)}.hero:after{content:"";position:absolute;width:270px;height:270px;right:100px;top:-145px;border:1px solid rgba(215,250,53,.28);border-radius:50%;box-shadow:0 0 0 30px rgba(215,250,53,.035),0 0 0 60px rgba(215,250,53,.025)}.hero-copy{position:relative;z-index:1;max-width:610px}.hero-label{display:inline-flex;align-items:center;gap:7px;color:var(--lime);font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.hero h2{font-size:clamp(26px,4vw,38px);line-height:1.05;letter-spacing:-.05em;margin:12px 0 8px}.hero p{color:#c2c8c3;margin:0;max-width:460px;font-size:14px}.hero-meta{display:flex;gap:17px;margin-top:19px;color:#dce0dc;font-size:12px}.hero-meta span{display:flex;gap:6px;align-items:center}.start-btn{position:relative;z-index:1;flex-shrink:0;border:0;border-radius:99px;padding:14px 21px;background: #e2c66e; /* chiaro */;font-weight:800;color:#171918;box-shadow:0 5px 18px rgba(215,250,53,.15)}.start-btn:hover{background:#e4ff70;transform:translateY(-1px)}
+.grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(260px,.8fr);gap:18px;margin-top:18px}.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:21px;box-shadow:var(--shadow)}.panel-title{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px}.panel-title h2{font-size:17px;letter-spacing:-.025em;margin:0}.muted{color:var(--muted);font-size:12px}.program-progress{display:flex;align-items:center;gap:16px}.ring{width:62px;height:62px;border-radius:50%;background:conic-gradient(var(--lime-dark) 0deg,#edf0e9 0deg);display:grid;place-items:center;flex-shrink:0;position:relative}.ring:before{content:"";position:absolute;inset:6px;background:white;border-radius:50%}.ring b{position:relative;font-size:14px}.progress-text b{display:block;font-size:14px}.progress-text span{color:var(--muted);font-size:12px}.progressbar{height:6px;border-radius:10px;background:#eef0ec;margin-top:16px;overflow:hidden}.progressbar span{display:block;width:0;height:100%;background:var(--lime-dark);transition:width .3s}
+.session-picker{display:flex;gap:8px;margin:2px 0 16px}.pill{border:1px solid var(--line);background:#fff;border-radius:99px;padding:8px 13px;font-size:12px;font-weight:700;color:#606762}.pill.active{background:var(--dark);border-color:var(--dark);color:var(--lime)}.workout-summary{display:flex;align-items:center;justify-content:space-between;padding:15px;border-radius:16px;background:#f5f7f3;gap:14px}.workout-summary h3{font-size:15px;margin:0 0 3px}.workout-summary p{font-size:12px;color:var(--muted);margin:0}.summary-tag{white-space:nowrap;color:#59615b;font-size:11px;font-weight:750}.section-label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#7b827d;font-weight:800;margin:22px 0 10px}.exercise-list{display:grid;gap:10px}.exercise{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:white}.exercise-top{padding:13px 14px;display:flex;align-items:center;gap:12px}.exercise-number{width:35px;height:35px;border-radius:11px;background:#f1f3ed;display:grid;place-items:center;font-size:12px;font-weight:800;flex-shrink:0}.exercise-info{min-width:0;flex:1}.exercise-info h3{font-size:13px;line-height:1.25;margin:0 0 3px}.exercise-info p{font-size:11px;color:var(--muted);margin:0}.dose{font-size:11px;color:#59615b;white-space:nowrap;font-weight:700}.expand{border:0;background:transparent;color:#727a74;font-size:18px;width:28px}.exercise-body{border-top:1px solid var(--line);padding:13px 14px 15px;font-size:12px;color:#c2c8c3}.visual{background:#f4f6f2;border-radius:12px;padding:8px;margin-bottom:12px}.visual-sequence{display:grid;grid-template-columns:1fr 1fr;gap:8px}.pose{position:relative;background:#fff;border-radius:9px;padding:16px 8px 6px}.pose svg{width:100%;height:90px}.pose-label{position:absolute;top:5px;left:8px;font-size:8px;font-weight:800;letter-spacing:.1em;color:#858c86}.caption{font-size:9px;color:#858c86;text-align:center;margin-top:5px}.exercise-body h4{font-size:11px;text-transform:uppercase;letter-spacing:.08em;margin:12px 0 5px;color:##c2c8c3}.exercise-body ul{padding-left:17px;margin:0;display:grid;gap:4px}.exercise-body .avoid{color:#767b77}.coach-tip{padding:11px 12px;border-radius:11px;background:#f5f6f1;margin-top:12px;font-size:11px}.checkline{display:flex;align-items:center;gap:8px;margin-top:12px;font-size:11px;font-weight:700;color:#4c534d}.checkline input{accent-color:#899f13;width:16px;height:16px}.notes{width:100%;min-height:44px;resize:vertical;border:1px solid var(--line);border-radius:9px;padding:9px;margin-top:9px;font:11px inherit}.hidden{display:none!important}
+.side-stack{display:grid;align-content:start;gap:18px}.mini-stat{display:flex;align-items:center;justify-content:space-between;padding:13px 0;border-top:1px solid var(--line)}.mini-stat:first-of-type{border-top:0}.mini-stat span{color:var(--muted);font-size:12px}.mini-stat b{font-size:13px}.tip{background:#f5f7f2;border-radius:14px;padding:14px;font-size:12px;color:#515951}.tip b{display:block;margin-bottom:5px;color:#242824}.tools{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}.small-btn{border:1px solid var(--line);background:#fff;border-radius:99px;padding:8px 12px;font-size:11px;font-weight:700;color:#4d554e}.small-btn:hover{border-color:#a4bb36}.timer{display:flex;align-items:center;justify-content:space-between;gap:10px}.timer output{font-size:24px;font-variant-numeric:tabular-nums;font-weight:750;letter-spacing:-.04em}.timer-controls{display:flex;gap:6px}.timer-controls button{border:0;border-radius:99px;padding:8px 11px;background:var(--dark);color:white;font-size:11px;font-weight:700}.timer-controls .primary{background: #e2c66e; /* chiaro */;color:var(--ink)}
+.lower{margin-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:18px}.list-clean{padding-left:19px;margin:0;color:#515851;font-size:12px;display:grid;gap:8px}.progression{width:100%;border-collapse:collapse;font-size:11px}.progression th,.progression td{text-align:left;padding:9px 7px;border-bottom:1px solid var(--line);vertical-align:top}.progression th{font-size:10px;color:#707771;text-transform:uppercase;letter-spacing:.08em}.footer{text-align:center;color:#858b86;font-size:10px;margin-top:22px}.bottom-nav{display:none}
+.page-view{display:none}.page-view.active{display:block}.workout-page-head{margin:2px 0 18px}.workout-page-head h1{font-size:clamp(28px,5vw,40px);letter-spacing:-.05em;margin:5px 0}.workout-page-head p{margin:0}.home-info-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}.workout-timer-panel{position:fixed;z-index:20;left:50%;bottom:16px;transform:translateX(-50%);width:min(620px,calc(100% - 32px));display:flex;align-items:center;gap:18px;padding:11px 16px;background:rgba(21,22,21,.94);border:1px solid rgba(200,170,85,.38);box-shadow:0 12px 34px rgba(0,0,0,.38);backdrop-filter:blur(14px)}.workout-timer-panel .panel-title{flex:1;margin:0}.workout-timer-panel .panel-title h2{font-size:14px}.workout-timer-panel .timer{gap:12px}.workout-timer-panel .timer output{font-size:22px}@media(max-width:760px){.topbar{height:60px;padding:0 17px}.top-actions .user-label{display:none}main{padding:23px 16px 145px}.greeting{align-items:start;flex-direction:column;gap:5px}.week{gap:5px}.day{padding:8px 2px;border-radius:12px;font-size:9px}.day strong{font-size:13px}.hero{min-height:0;padding:23px 20px;display:block}.hero:after{right:-100px;top:-140px}.hero h2{font-size:29px}.hero-meta{gap:12px;flex-wrap:wrap}.start-btn{margin-top:18px}.grid{grid-template-columns:1fr;margin-top:14px;gap:14px}.panel{padding:17px}.side-stack{grid-template-columns:1fr}.home-info-grid,.lower{grid-template-columns:1fr;gap:14px}.exercise-top{gap:9px;padding:12px}.dose{font-size:10px}.bottom-nav{display:flex;position:fixed;z-index:5;bottom:0;left:0;right:0;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-top:1px solid var(--line);justify-content:space-around;padding:9px 8px calc(9px + env(safe-area-inset-bottom))}.bottom-nav button{border:0;background:none;color:#737a74;font-size:10px;display:grid;justify-items:center;gap:2px}.bottom-nav button span{font-size:18px}.bottom-nav button.active{color:#202520;font-weight:800}.summary-tag{font-size:10px}.panel-title{margin-bottom:12px}.workout-timer-panel{bottom:calc(60px + env(safe-area-inset-bottom));width:calc(100% - 20px);padding:9px 11px;gap:9px;border-radius:15px}.workout-timer-panel .panel-title{flex:1}.workout-timer-panel .panel-title h2{font-size:12px}.workout-timer-panel .panel-title .muted{display:none}.workout-timer-panel .timer{gap:7px}.workout-timer-panel .timer output{font-size:19px}.workout-timer-panel .timer-controls{gap:5px}.workout-timer-panel .timer-controls button{padding:7px 9px;font-size:10px}}
+@media print{.workout-timer-panel{display:none!important}body{background:#fff}.topbar,.week,.hero,.side-stack,.bottom-nav,.tools,.session-picker{display:none!important}main{padding:0}.grid,.lower{display:block}.panel{box-shadow:none;border:0;padding:10px 0}.exercise{break-inside:avoid}.exercise-body{display:block!important}.exercise-body .notes{display:none}.exercise-list{display:grid!important}.footer{margin-top:15px}}
+#workoutPanel .pill {
+  background: rgba(200, 170, 85, 0.07);
+  border-color: rgba(200, 170, 85, 0.22);
+  color: #e4dfcf;
+}
+
+#workoutPanel .pill.active {
+background: #e2c66e; /* chiaro */
+  color: #17140b;
+}
+
+#workoutPanel .workout-summary {
+  background: linear-gradient(
+    180deg,
+    rgba(200, 170, 85, 0.18),
+    rgba(200, 170, 85, 0.04)
+  );
+  border: 1px solid rgba(200, 170, 85, 0.28);
+}
+
+#workoutPanel .exercise {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.055),
+    rgba(255, 255, 255, 0.018)
+  );
+  border-color: rgba(200, 170, 85, 0.24);
+}
+
+#workoutPanel .exercise-body {
+  background: rgba(8, 9, 8, 0.48);
+  border-top: 1px solid rgba(200, 170, 85, 0.2);
+}
+
+#workoutPanel .visual,
+#workoutPanel .pose {
+  background: rgba(255, 255, 255, 0.035);
+}#workoutPanel .exercise-info p,
+#workoutPanel .dose,
+#workoutPanel .caption {
+  color: #c2c8c3;
+}
+#workoutPanel .prior-load{width:82px;min-width:72px;height:31px;padding:5px 7px;border:1px solid rgba(200,170,85,.42);border-radius:8px;background:rgba(0,0,0,.28);color:#f1efe7;font:600 10px/1.2 Inter,ui-sans-serif,system-ui,sans-serif;text-align:center;}
+#workoutPanel .prior-load::placeholder{color:#c2c8c3;opacity:1;font-weight:500;}
+#workoutPanel .prior-load:focus{border-color:#e2c66e;box-shadow:0 0 0 2px rgba(200,170,85,.16);}
+@media(max-width:760px){#workoutPanel .prior-load{width:70px;min-width:66px;font-size:9px;padding:5px 4px}.exercise-top{gap:7px}}#workoutPanel .exercise-art{display:block;width:100%;height:auto;border-radius:8px;object-fit:contain}</style>
+</head>
+<body>
+<div class="shell">
+<header class="topbar"><div class="brand"><span class="brand-mark">↗</span><span>LA GHISA TI È AMICA</span></div><div class="top-actions"><span class="user-label">IL TUO SPAZIO ALLENAMENTO</span><span class="avatar" aria-label="Profilo">G</span></div></header>
+<main id="coach">
+<div id="homeView" class="page-view active">
+<section class="greeting"><div><div class="eyebrow">IL TUO COACH · TOTAL BODY</div><h1>Pronto a muoverti?</h1></div><div class="today" id="todayLabel"></div></section>
+<div class="week" id="weekStrip" aria-label="Settimana"></div>
+<section class="hero"><div class="hero-copy"><span class="hero-label">● PIANO PERSONALE · SETTIMANA 1</span><h2>Costruisci forza.<br>Un allenamento alla volta.</h2><p>Due sessioni total body pensate per progredire con tecnica, controllo e costanza.</p><div class="hero-meta"><span>◷ 60 min</span><span>▦ 5 esercizi</span><span>◉ Intensità moderata</span></div></div><button class="start-btn" id="startWorkout">Apri allenamento&nbsp; →</button></section>
+<div class="home-info-grid">
+<section class="panel"><div class="panel-title"><h2>Il tuo percorso</h2><span class="muted">Ciclo iniziale</span></div><div class="program-progress"><div class="ring" id="progressRing"><b id="progressCount">0/10</b></div><div class="progress-text"><b id="progressHeading">Due sessioni programmate</b><span id="progressCaption">Segna gli esercizi completati</span></div></div><div class="progressbar"><span id="progressBar"></span></div><div class="mini-stat"><span>Frequenza</span><b>2× settimana</b></div><div class="mini-stat"><span>Recupero tra sessioni</span><b>48–72 ore</b></div><div class="mini-stat"><span>Impegno</span><b>RIR 3–4</b></div></section>
+<section class="panel"><div class="panel-title"><h2>Indicazione del coach</h2><span aria-hidden="true">✳</span></div><div class="tip"><b>Lascia qualche ripetizione in riserva</b>Usa un carico che ti permetta di mantenere la tecnica e fermarti con 3–4 ripetizioni ancora possibili. Aumenta gradualmente.</div></section>
+</div>
+<div class="lower"><section class="panel"><div class="panel-title"><h2>Prima di iniziare</h2><span class="muted">Riscaldamento · 8 min</span></div><ul class="list-clean"><li>3 minuti di camminata veloce o marcia sul posto.</li><li>8–10 squat a corpo libero verso una panca, senza forzare.</li><li>8 hip hinge a corpo libero e circonduzioni controllate delle spalle.</li><li>1–3 serie leggere di avvicinamento per il primo esercizio.</li></ul></section><section class="panel"><div class="panel-title"><h2>Progressione iniziale</h2><span class="muted">4 settimane</span></div><table class="progression"><thead><tr><th>Settimana</th><th>Indicazione</th></tr></thead><tbody><tr><td>1</td><td>2 serie per esercizio, carico facile, tecnica prima di tutto.</td></tr><tr><td>2</td><td>Stesso volume; aumenta poco solo se il movimento resta controllato.</td></tr><tr><td>3</td><td>Se recuperi bene, aggiungi una serie ai primi due esercizi.</td></tr><tr><td>4</td><td>Consolida e rivaluta fatica e tecnica.</td></tr></tbody></table></section></div>
+<p class="footer">Gli schemi sono orientativi. Se non conosci un movimento con bilanciere, chiedi a un professionista qualificato di mostrarti la tecnica.</p>
+</div>
+<div id="workoutView" class="page-view">
+<section class="workout-page-head"><div class="eyebrow">IL TUO PROGRAMMA</div><h1>Allenamento total body</h1><p class="muted">Scegli una sessione e segui gli esercizi. Il timer per le pause è in fondo alla scheda.</p></section>
+<section class="panel" id="workoutPanel"><div class="panel-title"><h2>Il tuo allenamento</h2><span class="muted">Scegli la sessione</span></div>
+<div class="session-picker"><button class="pill active" data-session="A">SESSIONE A</button><button class="pill" data-session="B">SESSIONE B</button><button class="pill" id="showAll">Tutte</button></div>
+<div class="workout-summary"><div><h3 id="sessionTitle">Allenamento A</h3><p id="sessionDesc">Squat, spinta orizzontale, schiena e catena posteriore.</p></div><span class="summary-tag">60 MIN · TOTAL BODY</span></div>
+<div class="section-label">Esercizi della sessione</div><div id="sessionA" class="exercise-list"></div><div id="sessionB" class="exercise-list hidden"></div>
+<div class="tools"><button class="small-btn" id="printBtn">Stampa / PDF</button><button class="small-btn" id="resetBtn">Azzera spunte</button></div></section>
+
+</div>
+</main>
+<section class="panel workout-timer-panel" id="timerPanel"><div class="panel-title"><h2>Timer recupero</h2><span class="muted">Pausa consigliata · 90 secondi</span></div><div class="timer"><output id="timerDisplay">01:30</output><div class="timer-controls"><button id="timerStart" class="primary">Avvia</button><button id="timerStop">Ferma</button></div></div></section>
+<nav class="bottom-nav" aria-label="Navigazione"><button class="active" data-page="homeView"><span>⌂</span>Coach</button><button data-page="workoutView"><span>◉</span>Workout</button><button id="progressNav"><span>◷</span>Progressi</button></nav>
+</div>
+<script>const figures = {
+ squat:`<svg viewBox="0 0 320 170" role="img" aria-label="Schema squat con bilanciere"><path d="M28 145H292" stroke="#a8b8aa" stroke-width="3"/><path d="M90 35V145M230 35V145" stroke="#789080" stroke-width="5"/><path d="M78 36H242" stroke="#334f40" stroke-width="7" stroke-linecap="round"/><circle cx="160" cy="48" r="10" fill="#d39a72"/><path d="M151 60L139 91L158 107" stroke="#244b3b" stroke-width="11" stroke-linecap="round" fill="none"/><path d="M139 91L115 109L111 140" stroke="#244b3b" stroke-width="10" stroke-linecap="round" fill="none"/><path d="M158 107L181 122L200 140" stroke="#244b3b" stroke-width="10" stroke-linecap="round" fill="none"/><path d="M145 66L124 73M145 66L175 70" stroke="#244b3b" stroke-width="7" stroke-linecap="round"/><path d="M109 143H126M195 143H212" stroke="#d39a72" stroke-width="6" stroke-linecap="round"/><path d="M246 75V117" stroke="#8aa18d" stroke-width="2" stroke-dasharray="4 4"/><path d="M240 110L246 118L252 110" stroke="#8aa18d" stroke-width="2" fill="none"/></svg>`,
+ bench:`<svg viewBox="0 0 320 170" role="img" aria-label="Schema distensioni su panca"><path d="M30 142H290" stroke="#a8b8aa" stroke-width="3"/><path d="M68 100H244" stroke="#536e5b" stroke-width="10" stroke-linecap="round"/><path d="M92 108L80 142M222 108L237 142" stroke="#536e5b" stroke-width="6"/><circle cx="99" cy="83" r="9" fill="#d39a72"/><path d="M108 89L148 98L181 99" stroke="#244b3b" stroke-width="11" stroke-linecap="round" fill="none"/><path d="M130 94L126 70L126 58M151 98L160 74L160 59" stroke="#244b3b" stroke-width="7" stroke-linecap="round" fill="none"/><path d="M111 87L123 70M112 87L145 73" stroke="#244b3b" stroke-width="7" stroke-linecap="round"/><path d="M118 54H135M152 54H169" stroke="#334f40" stroke-width="5" stroke-linecap="round"/><path d="M119 45V64M134 45V64M153 45V64M168 45V64" stroke="#334f40" stroke-width="3"/><path d="M185 72V51M179 57L185 50L191 57" stroke="#8aa18d" stroke-width="2" fill="none"/></svg>`,
+ row:`<svg viewBox="0 0 320 170" role="img" aria-label="Schema rematore con manubrio"><path d="M30 145H290" stroke="#a8b8aa" stroke-width="3"/><path d="M54 104H158" stroke="#536e5b" stroke-width="9" stroke-linecap="round"/><path d="M73 111L63 143M141 111L151 143" stroke="#536e5b" stroke-width="5"/><circle cx="181" cy="45" r="9" fill="#d39a72"/><path d="M176 56L146 81L105 87" stroke="#244b3b" stroke-width="11" stroke-linecap="round" fill="none"/><path d="M146 81L167 109L189 139" stroke="#244b3b" stroke-width="10" stroke-linecap="round" fill="none"/><path d="M105 87L92 114L75 139" stroke="#244b3b" stroke-width="10" stroke-linecap="round" fill="none"/><path d="M139 78L164 70L177 80" stroke="#244b3b" stroke-width="7" stroke-linecap="round" fill="none"/><rect x="170" y="77" width="25" height="8" rx="3" fill="#334f40"/><path d="M202 70V95M196 77L202 69L208 77" stroke="#8aa18d" stroke-width="2" fill="none"/></svg>`,
+ rdl:`<svg viewBox="0 0 320 170" role="img" aria-label="Schema stacco rumeno"><path d="M28 145H292" stroke="#a8b8aa" stroke-width="3"/><circle cx="152" cy="28" r="9" fill="#d39a72"/><path d="M148 39L130 70L151 93" stroke="#244b3b" stroke-width="11" stroke-linecap="round" fill="none"/><path d="M130 70L114 106L109 139M151 93L175 112L185 139" stroke="#244b3b" stroke-width="10" stroke-linecap="round" fill="none"/><path d="M141 46L166 68L184 87" stroke="#244b3b" stroke-width="7" stroke-linecap="round" fill="none"/><path d="M184 87L203 104" stroke="#244b3b" stroke-width="6" stroke-linecap="round"/><path d="M94 105H220" stroke="#334f40" stroke-width="6" stroke-linecap="round"/><circle cx="88" cy="105" r="9" fill="#536e5b"/><circle cx="226" cy="105" r="9" fill="#536e5b"/><path d="M214 45L236 65M230 53L236 65L223 63" stroke="#8aa18d" stroke-width="2" fill="none"/></svg>`,
+ deadbug:`<svg viewBox="0 0 320 170" role="img" aria-label="Schema dead bug"><path d="M22 137H298" stroke="#a8b8aa" stroke-width="3"/><circle cx="86" cy="108" r="9" fill="#d39a72"/><path d="M96 110L139 115L174 113" stroke="#244b3b" stroke-width="11" stroke-linecap="round"/><path d="M126 114L112 76L91 61M143 114L163 81L187 68" stroke="#244b3b" stroke-width="8" stroke-linecap="round" fill="none"/><path d="M174 113L199 91L224 88M174 113L202 129L229 130" stroke="#244b3b" stroke-width="8" stroke-linecap="round" fill="none"/><path d="M77 122L65 137M220 138H241" stroke="#d39a72" stroke-width="5" stroke-linecap="round"/><path d="M57 65L75 53M66 52L75 53L72 62" stroke="#8aa18d" stroke-width="2" fill="none"/></svg>`,
+ trap:`<svg viewBox="0 0 320 170" role="img" aria-label="Schema stacco con trap bar"><path d="M25 145H295" stroke="#a8b8aa" stroke-width="3"/><path d="M108 104L128 129L190 129L211 104L190 79L128 79Z" stroke="#536e5b" stroke-width="5" fill="none"/><circle cx="151" cy="34" r="9" fill="#d39a72"/><path d="M151 45L141 74L151 96" stroke="#244b3b" stroke-width="11" stroke-linecap="round" fill="none"/><path d="M141 74L126 104L125 139M151 96L175 112L184 139" stroke="#244b3b" stroke-width="10" stroke-linecap="round" fill="none"/><path d="M145 52L125 78L119 97M145 52L173 76L191 96" stroke="#244b3b" stroke-width="7" stroke-linecap="round" fill="none"/><path d="M107 99L121 99M190 99L204 99" stroke="#334f40" stroke-width="5" stroke-linecap="round"/><path d="M231 55V83M225 77L231 84L237 77" stroke="#8aa18d" stroke-width="2" fill="none"/></svg>`,
+ press:`<svg viewBox="0 0 320 170" role="img" aria-label="Schema shoulder press seduto"><path d="M25 145H295" stroke="#a8b8aa" stroke-width="3"/><path d="M104 80V139M104 80H157" stroke="#536e5b" stroke-width="8" stroke-linecap="round"/><circle cx="144" cy="42" r="9" fill="#d39a72"/><path d="M144 53L144 91L144 119" stroke="#244b3b" stroke-width="11" stroke-linecap="round"/><path d="M144 66L116 42L116 22M144 66L171 42L171 22" stroke="#244b3b" stroke-width="7" stroke-linecap="round" fill="none"/><rect x="106" y="13" width="20" height="8" rx="3" fill="#334f40"/><rect x="161" y="13" width="20" height="8" rx="3" fill="#334f40"/><path d="M144 119L128 139M144 119L162 139" stroke="#244b3b" stroke-width="9" stroke-linecap="round"/><path d="M204 48V22M198 29L204 21L210 29" stroke="#8aa18d" stroke-width="2" fill="none"/></svg>`,
+ lunge:`<svg viewBox="0 0 320 170" role="img" aria-label="Schema affondo indietro"><path d="M25 145H295" stroke="#a8b8aa" stroke-width="3"/><circle cx="157" cy="30" r="9" fill="#d39a72"/><path d="M157 41L157 79L157 91" stroke="#244b3b" stroke-width="11" stroke-linecap="round"/><path d="M157 91L126 111L102 139M157 91L190 105L222 109L237 139" stroke="#244b3b" stroke-width="10" stroke-linecap="round" fill="none"/><path d="M157 50L137 72M157 50L177 72" stroke="#244b3b" stroke-width="7" stroke-linecap="round"/><path d="M89 143H111M227 143H248" stroke="#d39a72" stroke-width="5" stroke-linecap="round"/><path d="M260 63V93M254 87L260 94L266 87" stroke="#8aa18d" stroke-width="2" fill="none"/></svg>`,
+ incline:`<svg viewBox="0 0 320 170" role="img" aria-label="Schema distensioni su panca inclinata"><path d="M25 145H295" stroke="#a8b8aa" stroke-width="3"/><path d="M68 119L192 66" stroke="#536e5b" stroke-width="10" stroke-linecap="round"/><path d="M92 109L80 142M181 77L222 142" stroke="#536e5b" stroke-width="6"/><circle cx="104" cy="93" r="9" fill="#d39a72"/><path d="M113 94L143 87L172 73" stroke="#244b3b" stroke-width="11" stroke-linecap="round" fill="none"/><path d="M134 88L132 61L141 45M158 81L166 56L175 42" stroke="#244b3b" stroke-width="7" stroke-linecap="round" fill="none"/><rect x="132" y="36" width="17" height="7" rx="3" fill="#334f40"/><rect x="166" y="33" width="17" height="7" rx="3" fill="#334f40"/><path d="M204 61V39M198 45L204 38L210 45" stroke="#8aa18d" stroke-width="2" fill="none"/></svg>`,
+ hyper:`<svg viewBox="0 0 320 170" role="img" aria-label="Schema estensione su panca romana"><path d="M25 145H295" stroke="#a8b8aa" stroke-width="3"/><path d="M83 83H145M112 83L96 143M140 83L164 143" stroke="#536e5b" stroke-width="8" stroke-linecap="round"/><circle cx="171" cy="54" r="9" fill="#d39a72"/><path d="M161 60L132 78L105 78" stroke="#244b3b" stroke-width="11" stroke-linecap="round" fill="none"/><path d="M132 78L119 107L107 139M105 78L83 103L75 139" stroke="#244b3b" stroke-width="9" stroke-linecap="round" fill="none"/><path d="M155 65L179 77M179 77L198 94" stroke="#244b3b" stroke-width="7" stroke-linecap="round"/><path d="M214 50L232 69M226 68L232 70L231 61" stroke="#8aa18d" stroke-width="2" fill="none"/></svg>`,
+ plank:`<svg viewBox="0 0 320 170" role="img" aria-label="Schema plank"><path d="M25 145H295" stroke="#a8b8aa" stroke-width="3"/><circle cx="80" cy="82" r="9" fill="#d39a72"/><path d="M90 84L145 98L207 105L249 129" stroke="#244b3b" stroke-width="11" stroke-linecap="round" fill="none"/><path d="M132 95L114 121L103 140M207 105L229 121L249 140" stroke="#244b3b" stroke-width="9" stroke-linecap="round" fill="none"/><path d="M99 140H117M241 140H259" stroke="#d39a72" stroke-width="5" stroke-linecap="round"/><path d="M145 70L176 77M169 71L177 77L168 82" stroke="#8aa18d" stroke-width="2" fill="none"/></svg>`
+};
+const exercisesA = [
+{title:"Squat al rack",dose:"2 × 8",rest:"120 s",img:"squat",purpose:"Quadricipiti, glutei e controllo del tronco.",steps:["Piedi circa alla larghezza delle spalle; bilanciere stabile sulla parte alta della schiena.","Inspira e scendi piegando anche e ginocchia, mantenendo tutto il piede appoggiato.","Risalire spingendo il pavimento, senza rimbalzare né perdere la posizione del tronco."],avoid:["Ginocchia che collassano verso l'interno.","Talloni che si sollevano o profondità forzata.","Carico elevato prima di aver imparato il movimento."],safety:"Regola i fermi del rack appena sotto la profondità raggiunta. Se non hai pratica con lo squat, inizia con squat a corpo libero verso una panca."},
+{title:"Distensioni con manubri su panca piana",dose:"2 × 8–10",rest:"90 s",img:"bench",purpose:"Pettorali, tricipiti e deltoide anteriore.",steps:["Piedi ben appoggiati e scapole stabili sulla panca.","Abbassa i manubri ai lati del petto con avambracci controllati.","Spingi verso l'alto senza far urtare i manubri né inarcare eccessivamente la schiena."],avoid:["Gomiti molto aperti a 90° rispetto al busto.","Rimbalzo in basso o discesa dolorosa.","Usare manubri troppo pesanti da posizionare in sicurezza."],safety:"Per la prima seduta scegli un peso che riesci a portare in posizione senza slanci. Non forzare se avverti dolore alla spalla."},
+{title:"Rematore con manubrio e appoggio",dose:"2 × 10 per lato",rest:"60–90 s",img:"row",purpose:"Gran dorsale, parte centrale della schiena e bicipiti.",steps:["Appoggia una mano e il ginocchio dello stesso lato sulla panca stabile.","Mantieni la schiena neutra e tira il manubrio verso il fianco.","Abbassa lentamente senza ruotare il busto."],avoid:["Strappare il peso o ruotare il tronco.","Sollevare la spalla verso l'orecchio.","Usare lo slancio per completare la ripetizione."],safety:"Inizia con un carico leggero e completa entrambi i lati con lo stesso controllo."},
+{title:"Stacco rumeno con bilanciere",dose:"2 × 10",rest:"90 s",img:"rdl",purpose:"Glutei, femorali e controllo dell'anca.",steps:["Piedi alla larghezza delle anche, bilanciere vicino alle cosce.","Spingi indietro le anche con ginocchia leggermente flesse; il bilanciere scorre vicino alle gambe.","Fermati quando senti tensione nei posteriori della coscia senza perdere la schiena neutra; torna in piedi."],avoid:["Trasformarlo in uno squat piegando molto le ginocchia.","Arrotondare la schiena o allontanare il bilanciere.","Scendere più in basso di quanto consenta la mobilità."],safety:"Se non hai già appreso il movimento, pratica prima l'hip hinge senza peso o con un manico."},
+{title:"Dead bug bilaterale",dose:"2 × 8",rest:"45 s",img:"deadbug",purpose:"Controllo del core e stabilità del bacino con estensione simultanea.",steps:["Sdraiati supino con braccia verticali e anche e ginocchia piegate a circa 90 gradi.","Espira ed estendi insieme entrambe le braccia oltre la testa e entrambe le gambe in direzione opposta.","Ritorna alla posizione iniziale mantenendo la zona lombare stabile e senza inarcarla."],avoid:["Inarcare la schiena durante l'estensione.","Abbassare gli arti oltre il punto in cui riesci a tenere stabile la zona lombare.","Trattenere il respiro o muovere gli arti rapidamente."],safety:"Riduci l'ampiezza dell'estensione se perdi il controllo del tronco."}
+];
+const exercisesB = [
+{title:"Stacco con trap bar",dose:"2 × 8",rest:"120 s",img:"trap",purpose:"Glutei, gambe, schiena e presa.",steps:["Centra il corpo nella trap bar; piedi circa alla larghezza delle anche.","Fletti anche e ginocchia, afferra le maniglie e stabilizza il tronco.","Spingi il pavimento e alzati senza strattoni; riappoggia il peso con controllo."],avoid:["Partire con la schiena curva o le anche troppo alte.","Strappare il carico dal pavimento.","Iperestendere la schiena in chiusura."],safety:"Se la trap bar ha maniglie alte, puoi iniziare da quella posizione. Il peso deve essere gestibile e ogni ripetizione controllata."},
+{title:"Shoulder press con manubri da seduto",dose:"2 × 8–10",rest:"90 s",img:"press",purpose:"Spalle e tricipiti.",steps:["Siediti su panca stabile, schiena sostenuta se possibile e piedi a terra.","Parti con i manubri all'altezza delle spalle e polsi in linea con gli avambracci.","Spingi verso l'alto senza inarcare la zona lombare; scendi lentamente."],avoid:["Inarcare la schiena per superare il punto difficile.","Scendere in una posizione che provoca dolore.","Battere i manubri tra loro in alto."],safety:"Usa una panca inclinata con schienale se disponibile. In caso di fastidio alla spalla, interrompi e sostituisci l'esercizio."},
+{title:"Affondi indietro a corpo libero",dose:"2 × 8 per lato",rest:"60–90 s",img:"lunge",purpose:"Quadricipiti, glutei, equilibrio e controllo unilaterale.",steps:["In piedi, fai un passo indietro e scendi quanto riesci a controllare.","Mantieni il piede anteriore ben appoggiato e il ginocchio orientato nella direzione delle dita.","Spingi attraverso il piede anteriore per tornare in piedi e alterna."],avoid:["Perdere l'equilibrio o fare passi troppo lunghi.","Lasciare collassare il ginocchio verso l'interno.","Aggiungere pesi prima di controllare la variante a corpo libero."],safety:"Tieni una mano su un appoggio stabile se necessario. Puoi ridurre la profondità o sostituire con squat a corpo libero verso panca."},
+{title:"Distensioni con manubri su panca inclinata",dose:"2 × 10",rest:"90 s",img:"incline",purpose:"Pettorali, soprattutto porzione clavicolare, e tricipiti.",steps:["Imposta lo schienale a inclinazione moderata e appoggia bene schiena e piedi.","Porta i manubri ai lati della parte alta del petto con controllo.","Spingi verso l'alto mantenendo polsi stabili e spalle senza dolore."],avoid:["Inclinazione eccessiva se porta tutto il lavoro sulle spalle.","Rimbalzare in basso o perdere il controllo dei manubri.","Carico troppo pesante per posizionarsi in sicurezza."],safety:"Se la panca inclinata o il movimento risultano scomodi, sostituisci con push-up inclinati o panca piana leggera."},
+{title:"Plank sugli avambracci",dose:"2 × 20–30 s",rest:"45 s",img:"plank",purpose:"Resistenza del core e stabilità del tronco.",steps:["Gomiti sotto le spalle, avambracci a terra e gambe distese.","Mantieni testa, tronco e bacino allineati, respirando normalmente.","Interrompi la serie prima che il bacino ceda o la schiena si inarchi."],avoid:["Trattenere il respiro.","Bacino troppo alto o che cade verso il pavimento.","Resistere a tutti i costi perdendo la posizione."],safety:"Per renderlo più facile, eseguilo con le mani su una panca stabile."}
+];
+const exerciseArt={"Squat al rack":"squat-rack.jpg","Distensioni con manubri su panca piana":"bench-piana.jpg","Rematore con manubrio e appoggio":"rematore-manubrio.jpg","Stacco rumeno con bilanciere":"stacco-rumeno.jpg","Dead bug bilaterale":"dead-bug-bilaterale.jpg","Stacco con trap bar":"stacco-trap-bar.jpg","Shoulder press con manubri da seduto":"shoulder-press.jpg","Affondi indietro a corpo libero":"affondi-indietro.jpg","Distensioni con manubri su panca inclinata":"panca-inclinata.jpg","Plank sugli avambracci":"plank.jpg"};
+[...exercisesA,...exercisesB].forEach(e=>{e.art=exerciseArt[e.title]||""});function card(e,i,session){return `<article class="exercise"><div class="exercise-top"><span class="exercise-number">${String(i+1).padStart(2,"0")}</span><div class="exercise-info"><h3>${e.title}</h3><p>${e.purpose}</p></div><span class="dose">${e.dose}</span><input class="prior-load" type="text" inputmode="decimal" placeholder="kg prec." aria-label="Carico usato nella sessione precedente per ${e.title}" title="Carico usato nella sessione precedente" data-load-key="${session}-${i}"><button class="expand" type="button" aria-label="Mostra dettagli">⌄</button></div><div class="exercise-body hidden"><div class="visual">${e.art?`<img class="exercise-art" src="exercise-art/${e.art}" alt="Illustrazione tecnica: ${e.title}, posizione iniziale e movimento" loading="lazy">`:`<div class="visual-sequence"><div class="pose"><span class="pose-label">POSIZIONE</span>${figures[e.img]}</div><div class="pose pose-motion"><span class="pose-label">GESTO</span>${figures[e.img]}</div></div><div class="caption">Schema orientativo del gesto · non in scala</div>`}</div><div>Recupero consigliato: <b>${e.rest}</b></div><h4>Come eseguirlo</h4><ul>${e.steps.map(x=>`<li>${x}</li>`).join("")}</ul><h4>Errori da evitare</h4><ul class="avoid">${e.avoid.map(x=>`<li>${x}</li>`).join("")}</ul><div class="coach-tip"><b>Sicurezza:</b> ${e.safety}</div><label class="checkline"><input type="checkbox" data-key="${session}-${i}"> Esercizio completato</label><textarea class="notes" placeholder="Carico, sensazioni o note…" aria-label="Note per ${e.title}"></textarea></div></article>`}
+document.getElementById("sessionA").innerHTML=exercisesA.map((e,i)=>card(e,i,"A")).join("");
+document.getElementById("sessionB").innerHTML=exercisesB.map((e,i)=>card(e,i,"B")).join("");
+document.querySelectorAll(".prior-load").forEach(input=>{const key="previous-load-"+input.dataset.loadKey;try{input.value=localStorage.getItem(key)||""}catch{}input.addEventListener("input",()=>{try{localStorage.setItem(key,input.value)}catch{}})});
+const tabs=[...document.querySelectorAll("[data-session]")],a=document.getElementById("sessionA"),b=document.getElementById("sessionB");
+function setSession(s,scroll=true){tabs.forEach(t=>t.classList.toggle("active",t.dataset.session===s));document.getElementById("showAll").classList.remove("active");a.classList.toggle("hidden",s==="B");b.classList.toggle("hidden",s==="A");document.getElementById("sessionTitle").textContent=s==="A"?"Allenamento A":"Allenamento B";document.getElementById("sessionDesc").textContent=s==="A"?"Squat, spinta orizzontale, schiena e catena posteriore.":"Stacco, spalle, lavoro unilaterale e core.";if(scroll)document.getElementById("workoutPanel").scrollIntoView({behavior:"smooth",block:"start"})}
+tabs.forEach(t=>t.addEventListener("click",()=>setSession(t.dataset.session,false)));
+document.getElementById("showAll").addEventListener("click",()=>{a.classList.remove("hidden");b.classList.remove("hidden");tabs.forEach(t=>t.classList.remove("active"));document.getElementById("showAll").classList.add("active");document.getElementById("sessionTitle").textContent="Allenamenti A e B";document.getElementById("sessionDesc").textContent="Le due sessioni del tuo programma."});
+document.getElementById("printBtn").addEventListener("click",()=>window.print());document.getElementById("resetBtn").addEventListener("click",()=>{document.querySelectorAll('.checkline input').forEach(x=>x.checked=false);updateProgress()});
+const homeView=document.getElementById("homeView"),workoutView=document.getElementById("workoutView");function showPage(id){homeView.classList.toggle("active",id==="homeView");workoutView.classList.toggle("active",id==="workoutView");document.querySelectorAll("[data-page]").forEach(x=>x.classList.toggle("active",x.dataset.page===id));window.scrollTo({top:0,behavior:"smooth"})}document.querySelectorAll("[data-page]").forEach(x=>x.addEventListener("click",()=>showPage(x.dataset.page)));document.getElementById("startWorkout").addEventListener("click",()=>{setSession("A",false);showPage("workoutView")});document.getElementById("progressNav").addEventListener("click",()=>{showPage("homeView");setTimeout(()=>document.getElementById("progressRing").scrollIntoView({behavior:"smooth",block:"center"}),80)});
+document.addEventListener("click",e=>{const btn=e.target.closest(".expand");if(!btn)return;const body=btn.closest(".exercise").querySelector(".exercise-body");body.classList.toggle("hidden");btn.textContent=body.classList.contains("hidden")?"⌄":"⌃";btn.setAttribute("aria-expanded",String(!body.classList.contains("hidden")))});document.addEventListener("change",e=>{if(e.target.matches('.checkline input'))updateProgress()});
+function updateProgress(){const boxes=[...document.querySelectorAll('.checkline input')],done=boxes.filter(x=>x.checked).length,pct=boxes.length?done/boxes.length*100:0;document.getElementById("progressCount").textContent=`${done}/${boxes.length}`;document.getElementById("progressBar").style.width=pct+"%";document.getElementById("progressRing").style.background=`conic-gradient(var(--lime-dark) ${pct*3.6}deg,#edf0e9 0deg)`;document.getElementById("progressHeading").textContent=done===boxes.length?"Programma completato":"Due sessioni programmate";document.getElementById("progressCaption").textContent=done?`${done} esercizi completati`:"Segna gli esercizi completati"}updateProgress();
+const now=new Date();document.getElementById("todayLabel").textContent=new Intl.DateTimeFormat("it-IT",{weekday:"long",day:"numeric",month:"long"}).format(now);const weekStart=new Date(now);weekStart.setDate(now.getDate()-((now.getDay()+6)%7));document.getElementById("weekStrip").innerHTML=Array.from({length:7},(_,i)=>{const d=new Date(weekStart);d.setDate(weekStart.getDate()+i);const label=new Intl.DateTimeFormat("it-IT",{weekday:"short"}).format(d).replace(".","").toUpperCase();return `<div class="day ${d.toDateString()===now.toDateString()?"active":""}"><span>${d.toDateString()===now.toDateString()?"OGGI":label}</span><strong>${String(d.getDate()).padStart(2,"0")}</strong></div>`}).join("");
+let timerInterval=null,remaining=90;const display=document.getElementById("timerDisplay");function paint(){display.textContent=String(Math.floor(remaining/60)).padStart(2,"0")+":"+String(remaining%60).padStart(2,"0")}document.getElementById("timerStart").addEventListener("click",()=>{if(timerInterval)clearInterval(timerInterval);remaining=90;paint();timerInterval=setInterval(()=>{remaining--;paint();if(remaining<=0){clearInterval(timerInterval);timerInterval=null;display.textContent="Finito"}},1000)});document.getElementById("timerStop").addEventListener("click",()=>{if(timerInterval)clearInterval(timerInterval);timerInterval=null;remaining=90;paint()});
+</script></body></html>
